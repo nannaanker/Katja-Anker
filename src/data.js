@@ -4,7 +4,7 @@ export const data = [
     
     { name: "Skoleprojekt", 
         url:"https://eksamenmusikilejet.netlify.app//",
-        img:"/musikilejet.webp", 
+        img:"/fotos/blaablomst.webp", 
         category: "websites", 
         id: "Skoljeprojekt1",
         info: "Eksamensprojekt, Redesign for Musik i Lejet med fokus på UX og design - Tredje semester 2024",
