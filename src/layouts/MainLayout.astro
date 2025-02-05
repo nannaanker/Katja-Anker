@@ -14,27 +14,33 @@ const { title, description } = Astro.props;
     <link rel="stylesheet" href="https://use.typekit.net/oep1tpx.css" />
     <link rel="stylesheet" href="https://use.typekit.net/oep1tpx.css" />
     <link rel="stylesheet" href="https://use.typekit.net/oep1tpx.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/olb4wzi.css" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Dynamisk Title -->
-    <title>{title ? title : "Nanna Anker"}</title>
+    <title>{title ? title : "Katja Anker"}</title>
 
     <!-- Meta Description -->
-    <meta name="description" content={description ? description : "Portfolio for Nanna Anker Høeg, multimediedesigner."} />
+    <meta name="description" content={description ? description : "Oplev Katja Ankers arbejde som botanisk illustrator."} />
 
     <!-- Open Graph Tags for Social Media -->
-    <meta property="og:title" content={title ? title : "Nanna Anker - Portfolio"} />
-    <meta property="og:description" content={description ? description : "Explore the creative work of Nanna Anker Høeg, multimedia designer."} />
-    <meta property="og:image" content="https://nannaanker.netlify.app/fav.png" />
-    <meta property="og:url" content="https://nannaanker.netlify.app" />
+    <meta property="og:title" content={title ? title : "Katja Anker - Portfolio"} />
+    <meta property="og:description" content={description ? description : "Explore the creative work of Katja Anker, Botanic Illustrator."} />
+    <meta property="og:image" content="https://katjaanker.netlify.app/fav.png" />
+    <meta property="og:url" content="https://katjaanker.netlify.app" />
   </head>
 
-  <body class="bg-lyserod bg-[url('/baggrund2.webp')] bg-cover bg-fixed h-full flex flex-col">
+  <body class="bg-beige bg-fixed h-full flex flex-col">
     <Header />
 
     <!-- Sørg for, at main-sektionen tager plads nok til at "skubbe" footeren ned -->
     <main class="flex-grow">
+      <div class="mt-32 mx-5 lg:mx-20">
+        <a href="/">
+          <button class="font-elza text-sm font-medium text-rod hover:scale-105"> &larr; Til forsiden</button>
+        </a>
+      </div>
       <slot />
     </main>
 

@@ -1,0 +1,10 @@
+---
+import { data } from "../data.js";
+import MainLayout from "../layouts/MainLayout.astro";
+import Filter from "../components/Filter.svelte";
+---
+
+<MainLayout title="Katja Anker - Portfolio" description="Oplev Katja Ankers arbejde som botanisk illustrator">
+  <h1 class="flex flex-row justify-center text-[40px] md:text-[50px] font-titel font-bold mt-5 text-gron">Galleri</h1>
+  <Filter client:load data={data} />
+</MainLayout>

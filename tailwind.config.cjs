@@ -13,8 +13,11 @@ module.exports = {
           },
 
           colors: {
-            'lyserod': '#FFF7FE',
-            'rod': '#DA1919',
+            'beige': '#F1EFEA',
+            'rod': '#5F3535',
+            'gron':'#305538',
+            'sort':'#242424',
+
            
           },
           spacing: {
@@ -36,7 +39,7 @@ module.exports = {
 
            
           fontFamily: {
-            titel: ['polymath', 'sans-serif'], // Proxima Nova
+            titel: ['kings-caslon', 'sans-serif'], // Proxima Nova
             elza: ['poppins', 'sans-serif'], // elza
            
            
