@@ -1,26 +1,32 @@
 <!-- Menu på Desktop (Vises som flex-row) -->
 <div class="hidden md:flex flex-row gap-8 items-center text-rod text-2xl font-titel font-bold border-solid border-rod border-b-2 px-10 pb-1">
-  <a href="/galleri" class="hover:scale-105">Galleri</a>
-  <a href="/om" class="hover: hover:scale-105">Om kunstneren</a>
-  <a href="/kontakt" class="hover:scale-105">Kontakt</a>
+  <a href="/galleri" class="hover:underline hover:scale-105" x-text="translations[lang].gallery"></a>
+  <a href="/om" class="hover:underline hover:scale-105" x-text="translations[lang].about"></a>
+  <a href="/kontakt" class="hover:underline hover:scale-105" x-text="translations[lang].contact"></a>
 </div>
 
-<div class="px-5 py-5 lg:px-20 absolute top-0 right-0 w-full z-50 flex justify-end">
-  <!-- Burger Menu (Kun synlig på mobil) -->
-  <div class="flex md:hidden items-center ml-auto">
-    <button id="burger-icon" class="text-gray-800 hover:text-red-500">
-      <div class="bar w-8 h-0.5 bg-rod mb-1.5"></div>
-      <div class="bar w-8 h-0.5 bg-rod mb-1.5"></div>
-      <div class="bar w-8 h-0.5 bg-rod"></div>
-    </button>
-  </div>
+<!-- Burger Menu (Kun synlig på mobil) -->
+<div class="absolute top-5 right-5 flex md:hidden items-center ml-auto">
+  <button id="burger-icon" class="text-gray-800 hover:text-red-500">
+    <div class="bar w-8 h-0.5 bg-rod mb-1.5"></div>
+    <div class="bar w-8 h-0.5 bg-rod mb-1.5"></div>
+    <div class="bar w-8 h-0.5 bg-rod"></div>
+  </button>
+</div>
 
-  <!-- Mobil Menu (Skjult som standard) -->
-  <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white flex flex-col items-center justify-center z-50 hidden text-rod text-lg font-elza font-medium">
-    <div class="absolute top-5 right-5 font-thin text-6xl text-rod cursor-pointer" id="close-btn">×</div>
-    <a href="/galleri" class="py-4 focus:underline">Galleri</a>
-    <a href="/om" class="py-4 focus:underline">Om kunstneren</a>
-    <a href="/kontakt" class="py-4 focus:underline">Kontakt</a>
+<!-- Mobil Menu (Skjult som standard) -->
+<div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-beige flex flex-col items-center justify-center z-50 hidden text-rod text-lg font-elza font-medium">
+  <div class="absolute top-5 right-5 font-thin text-6xl text-rod cursor-pointer" id="close-btn">×</div>
+  <a href="/galleri" class="py-3 hover:underline hover:scale-105" x-text="translations[lang].gallery"></a>
+  <a href="/om" class="py-3 hover:underline hover:scale-105" x-text="translations[lang].about"></a>
+  <a href="/kontakt" class="py-3 hover:underline hover:scale-105" x-text="translations[lang].contact"></a>
+
+  <div class="flex gap-2 py-3">
+    <!-- Dansk knap -->
+    <button @click="lang = 'da'; localStorage.setItem('lang', 'da'); document.documentElement.lang = 'da'" :class="{ 'font-bold underline': lang === 'da' }" class="text-rod text-base font-elza font-medium px-2 py-1 bg-gray-50 rounded hover:bg-gray-200"> DA </button>
+
+    <!-- Engelsk knap -->
+    <button @click="lang = 'en'; localStorage.setItem('lang', 'en'); document.documentElement.lang = 'en'" :class="{ 'font-bold underline': lang === 'en' }" class="text-rod text-base font-elza font-medium px-2 py-1 bg-gray-50 rounded hover:bg-gray-200"> EN </button>
   </div>
 </div>
 

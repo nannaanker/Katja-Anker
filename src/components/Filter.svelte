@@ -29,10 +29,10 @@
 
 <div class="py-5">
   <!-- Navigationsmenu -->
-  <nav class="mb-7 flex gap-3 md:gap-10 text-rod text-sm md:text-base font-elza font-medium justify-center">
-    <button class="hover:underline hover:scale-105 focus:underline" on:click={() => filterByCategory("illustrationer")}> Illustrationer</button>
-    <button class="hover:underline hover:scale-105 focus:underline" on:click={() => filterByCategory("undervisning")}>Undervisning</button>
-    <button class="hover:underline hover:scale-105 focus:underline" on:click={() => filterByCategory("feltture")}>Botaniske feltture</button>
+  <nav class="mb-7 flex flex-col md:flex-row gap-2 md:gap-10 text-rod text-base md:text-base font-elza font-medium justify-center">
+    <button class="hover:underline hover:scale-105 focus:underline" x-text="translations[lang].illustration" on:click={() => filterByCategory("illustrationer")}> Illustrationer</button>
+    <button class="hover:underline hover:scale-105 focus:underline" x-text="translations[lang].teaching" on:click={() => filterByCategory("undervisning")}>Undervisning</button>
+    <button class="hover:underline hover:scale-105 focus:underline" x-text="translations[lang].fieldTrips" on:click={() => filterByCategory("feltture")}>Botaniske feltture</button>
   </nav>
 
   <!-- Indhold -->
@@ -45,7 +45,10 @@
           <img class="w-auto max-w-full m-auto max-h-full p-4" src={(item.gallery || [item.img])[item.currentPreviewIndex || 0]} alt={item.alt} />
         </div>
 
-        <button on:click={() => openModal(item, item.gallery || [item.img], item.currentPreviewIndex || 0)} class="absolute bottom-2 right-4 text-sm font-elza font-medium text-rod hover:scale-105"> Mere info &rarr; </button>
+        <button on:click={() => openModal(item, item.gallery || [item.img], item.currentPreviewIndex || 0)} class="absolute bottom-2 right-4 text-base md:text-sm font-elza font-medium text-rod hover:scale-105">
+          <span class="ml-1" x-text="translations[lang].info"></span>
+          &rarr; <!-- Pilen til venstre -->
+        </button>
       </div>
     {/each}
   </div>

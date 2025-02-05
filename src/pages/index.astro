@@ -4,6 +4,22 @@ import Nav from "../components/Nav.astro";
 ---
 
 <ForsideLayout title="Katja Anker - Botanisk Illustration" description="Oplev Katja Ankers arbejde som botanisk illustrator.">
+  <div class="absolute top-0 left-0 w-full flex justify-between items-center py-5 px-5 md:px-20">
+    <!-- Logo til venstre -->
+    <div class="flex items-center">
+      <img src="" alt="Logo" class="h-16" />
+    </div>
+
+    <!-- Sprogskifte-knap -->
+    <div class="flex flex-row hidden md:block">
+      <!-- Dansk knap -->
+      <button @click="lang = 'da'; localStorage.setItem('lang', 'da'); document.documentElement.lang = 'da'" :class="{ 'font-bold underline': lang === 'da' }" class="text-rod text-base font-elza font-medium px-2 py-1 bg-gray-50 bg-opacity-70 rounded hover:bg-gray-200 mr-2"> DA </button>
+
+      <!-- Engelsk knap -->
+      <button @click="lang = 'en'; localStorage.setItem('lang', 'en'); document.documentElement.lang = 'en'" :class="{ 'font-bold underline': lang === 'en' }" class="text-rod text-base font-elza font-medium px-2 py-1 bg-gray-50 bg-opacity-70 rounded hover:bg-gray-200"> EN </button>
+    </div>
+  </div>
+
   <div class="flex flex-col items-center justify-center m-auto">
     <Nav />
   </div>

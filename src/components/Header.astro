@@ -8,9 +8,18 @@
 
   <!-- Menu på Desktop (Vises som flex-row) -->
   <div class="hidden md:flex flex-row gap-5 ml-auto items-center text-rod text-base font-elza font-medium">
-    <a href="/galleri" class="hover:underline hover:scale-105">Galleri</a>
-    <a href="/om" class="hover:underline hover:scale-105">Om kunstneren</a>
-    <a href="/kontakt" class="hover:underline hover:scale-105">Kontakt</a>
+    <a href="/galleri" class="hover:underline hover:scale-105" x-text="translations[lang].gallery"></a>
+    <a href="/om" class="hover:underline hover:scale-105" x-text="translations[lang].about"></a>
+    <a href="/kontakt" class="hover:underline hover:scale-105" x-text="translations[lang].contact"></a>
+
+    <!-- Sprogskifte-knap -->
+    <div class="ml-5 flex gap-2">
+      <!-- Dansk knap -->
+      <button @click="lang = 'da'; localStorage.setItem('lang', 'da'); document.documentElement.lang = 'da'" :class="{ 'underline': lang === 'da' }" class="text-rod text-base font-elza font-medium px-2 py-1 bg-gray-50 rounded hover:bg-gray-200"> DA </button>
+
+      <!-- Engelsk knap -->
+      <button @click="lang = 'en'; localStorage.setItem('lang', 'en'); document.documentElement.lang = 'en'" :class="{ 'underline': lang === 'en' }" class="text-rod text-base font-elza font-medium px-2 py-1 bg-gray-50 rounded hover:bg-gray-200"> EN </button>
+    </div>
   </div>
 
   <!-- Burger Menu (Kun synlig på mobil) -->
@@ -25,9 +34,18 @@
   <!-- Mobil Menu (Skjult som standard) -->
   <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-beige flex flex-col items-center justify-center z-50 hidden text-rod text-xl font-elza font-medium">
     <div class="absolute top-5 right-5 font-thin text-6xl text-rod cursor-pointer" id="close-btn">×</div>
-    <a href="/galleri" class="py-4 focus:underline">Galleri</a>
-    <a href="/om" class="py-4 focus:underline">Om kunstneren</a>
-    <a href="/kontakt" class="py-4 focus:underline">Kontakt</a>
+
+    <a href="/galleri" class="py-3 hover:underline hover:scale-105" x-text="translations[lang].gallery"></a>
+    <a href="/om" class="py-3 hover:underline hover:scale-105" x-text="translations[lang].about"></a>
+    <a href="/kontakt" class="py-3 hover:underline hover:scale-105" x-text="translations[lang].contact"></a>
+    <!-- Sprogskifte-knap -->
+    <div class="flex gap-2 py-3">
+      <!-- Dansk knap -->
+      <button @click="lang = 'da'; localStorage.setItem('lang', 'da'); document.documentElement.lang = 'da'" :class="{ 'font-bold underline': lang === 'da' }" class="text-rod text-base font-elza font-medium px-2 py-1 bg-gray-50 rounded hover:bg-gray-200"> DA </button>
+
+      <!-- Engelsk knap -->
+      <button @click="lang = 'en'; localStorage.setItem('lang', 'en'); document.documentElement.lang = 'en'" :class="{ 'font-bold underline': lang === 'en' }" class="text-rod text-base font-elza font-medium px-2 py-1 bg-gray-50 rounded hover:bg-gray-200"> EN </button>
+    </div>
   </div>
 </div>
 

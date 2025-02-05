@@ -5,7 +5,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 <MainLayout>
   <div class="flex flex-col items-center md:items-start gap-5 md:flex-row md:gap-32 my-10 mx-5 lg:mx-20">
     <div class="md:w-3/6">
-      <p class="md:font-elza text-base md:text-lg leading-8 text-sort">Katja Anker er uddannet i havebrug og botanisk tegning fra Københavns Universitet og Kew Gardens i England. Hun har lavet en lang række illustrationer til publikationer om Danmarks flora, palmer, orkideer, skovtyper m.m. <br /> <br /> Sideløbende har hun undervist både private og studerende i såvel Danmark som udlandet, og hun har deltaget på feltture i Sydøstasien for at indsamle planter og registrere biodiversitet i arbejdet med at beskytte natur. I øjeblikket maler hun æbler til et projekt om oprindelige danske æblesorter.</p>
+      <p class="text-[25px] md:text-[30px] font-titel font-bold md:mb-3 text-gron">Katja Anker</p>
+      <p class="md:font-elza text-base md:text-lg leading-8 text-sort" x-html="translations[lang].artistInfo"></p>
     </div>
     <img class="md:w-3/6" src="/fotos/katjaskov.webp" alt="" />
   </div>

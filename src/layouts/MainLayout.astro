@@ -7,7 +7,38 @@ import "animate.css";
 const { title, description } = Astro.props;
 ---
 
-<html lang="en" class="h-full">
+<html
+  x-data="{ 
+    lang: localStorage.getItem('lang') || 'da', 
+    translations: {
+      da: {
+        gallery: 'Galleri',
+        about: 'Om kunstneren',
+        contact: 'Kontakt',
+        welcome: 'Velkommen til min hjemmeside',
+        illustration: 'Illustrationer',
+        teaching: 'Undervisning',
+        fieldTrips: 'Botaniske feltture',
+        home: 'Til forsiden',
+        info: 'Mere info',
+        artistInfo: 'Katja Anker er uddannet i havebrug og botanisk tegning fra Københavns Universitet og Kew Gardens i England. Hun har lavet en lang række illustrationer til publikationer om Danmarks flora, palmer, orkideer, skovtyper m.m. <br/> <br/> Sideløbende har hun undervist både private og studerende i såvel Danmark som udlandet, og hun har deltaget på feltture i Sydøstasien for at indsamle planter og registrere biodiversitet i arbejdet med at beskytte natur. I øjeblikket maler hun æbler til et projekt om oprindelige danske æblesorter.',
+      },
+      en: {
+        gallery: 'Gallery',
+        about: 'About the artist',
+        contact: 'Contact',
+        welcome: 'Welcome to my website',
+        illustration: 'Illustrations',
+        teaching: 'Teaching',
+        fieldTrips: 'Botanical field trips',
+        home: 'HomePage',
+        info: 'More info',
+        artistInfo: 'Katja Anker is trained in horticulture and botanical illustration from the University of Copenhagen and Kew Gardens in England. She has created a wide range of illustrations for publications on Denmark’s flora, palms, orchids, forest types, and more. <br/> <br/> Alongside her work, she has taught both private individuals and students in Denmark and abroad, and has participated in field trips in Southeast Asia to collect plants and document biodiversity as part of efforts to protect nature. She is currently painting apples for a project on native Danish apple varieties.',
+      }
+    }
+  }"
+  x-init="document.documentElement.lang = lang"
+>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/fav.png" />
@@ -29,16 +60,18 @@ const { title, description } = Astro.props;
     <meta property="og:description" content={description ? description : "Explore the creative work of Katja Anker, Botanic Illustrator."} />
     <meta property="og:image" content="https://katjaanker.netlify.app/fav.png" />
     <meta property="og:url" content="https://katjaanker.netlify.app" />
-  </head>
-
-  <body class="bg-beige bg-fixed h-full flex flex-col">
+  </head><body class="bg-beige bg-fixed h-full flex flex-col">
     <Header />
 
     <!-- Sørg for, at main-sektionen tager plads nok til at "skubbe" footeren ned -->
     <main class="flex-grow">
-      <div class="mt-32 mx-5 lg:mx-20">
+      <div class="mt-20 md:mt-32 mx-5 lg:mx-20">
         <a href="/">
-          <button class="font-elza text-sm font-medium text-rod hover:scale-105"> &larr; Til forsiden</button>
+          <button class="font-elza text-base font-medium text-rod hover:scale-105 flex items-center">
+            &larr; <!-- Pilen til venstre -->
+            <span class="ml-1" x-text="translations[lang].home"></span>
+            <!-- Tekst til højre -->
+          </button>
         </a>
       </div>
       <slot />
