@@ -3,5 +3,17 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Katja Anker - Kontakt" description="Kontakt Katja Anker.">
-  <h1 class="flex flex-row justify-center text-[40px] md:text-[50px] font-titel font-bold mt-5 text-gron">Kontakt</h1>
+  <div class="mb-52">
+    <h1 class="flex flex-row justify-center text-[40px] md:text-[50px] font-titel font-bold mt-5 text-gron" x-text="translations[lang].contact"></h1>
+
+    <div class="flex flex-col md:flex-row m-auto justify-center text-center md:text-left md:gap-32 mt-12">
+      <div><p class="mb-10 font-elza text-base">kort tekst / billed?</p></div>
+      <div>
+        <p class="font-elza text-lg md:text-2xl mb-5 text-sort">Email</p>
+        <a class="hover:underline underline md:no-underline hover:scale-105 transform font-elza text-rod font-medium text-base md:text-xl" href="mailto:katjaanker1@gmail.com"> katjaanker1@gmail.com </a>
+        <p class="font-elza text-lg md:text-2xl mb-5 mt-20 text-sort" x-text="translations[lang].tele"></p>
+        <a class="hover:underline underline md:no-underline hover:scale-105 transform font-elza text-rod font-medium text-base md:text-xl" href="tel:22345765"> +45 22 34 57 65 </a>
+      </div>
+    </div>
+  </div>
 </MainLayout>

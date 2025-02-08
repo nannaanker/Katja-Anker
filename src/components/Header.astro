@@ -1,8 +1,8 @@
-<div x-data="{ scroll: false }" @scroll.window="scroll = (window.pageYOffset > 120) ? true : false" :class="{ 'bg-white': scroll, 'bg-transparent': !scroll, 'absolute top-0 left-0 w-full z-50': !scroll, 'sticky top-0 w-full z-50 col-start-1 row-start-1': scroll }" class="flex flex-row px-5 py-5 lg:px-20 transition-all duration-300">
+<div x-data="{ scroll: false }" @scroll.window="scroll = (window.pageYOffset > 120) ? true : false" :class="{ 'bg-white': scroll, 'bg-transparent': !scroll, ' top-0 left-0 w-full z-50': !scroll, 'sticky top-0 w-full z-50 col-start-1 row-start-1': scroll }" class="flex flex-row px-5 py-10 lg:px-20 transition-all duration-300">
   <!-- Logo eller Titel -->
   <div class="flex flex-row items-center">
     <a href="/">
-      <img class="h-16 hover:scale-105" src="/logo4.png" alt="Logo" />
+      <img class="h-12 hover:scale-105" src="/logo.svg" alt="Logo" />
     </a>
   </div>
 

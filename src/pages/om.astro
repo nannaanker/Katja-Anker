@@ -3,11 +3,14 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout>
-  <div class="flex flex-col items-center md:items-start gap-5 md:flex-row md:gap-32 my-10 mx-5 lg:mx-20">
-    <div class="md:w-3/6">
-      <p class="text-[25px] md:text-[30px] font-titel font-bold md:mb-3 text-gron">Katja Anker</p>
-      <p class="md:font-elza text-base md:text-lg leading-8 text-sort" x-html="translations[lang].artistInfo"></p>
+  <div class="flex flex-col items-center md:items-start gap-5 md:flex-row md:gap-32 mt-10 mb-32 mx-5 lg:mx-20">
+    <div class="md:w-3/6 flex flex-col justify-between">
+      <div>
+        <p class="text-[25px] md:text-[30px] font-titel font-bold md:mb-3 text-gron">Katja Anker</p>
+        <p class="md:font-elza text-base md:text-lg leading-8 text-sort" x-html="translations[lang].artistInfo"></p>
+      </div>
     </div>
-    <img class="md:w-3/6" src="/fotos/katjaskov.webp" alt="" />
+
+    <img class="md:w-3/6 md:mt-4" src="/fotos/katjaskov.webp" alt="Katja i regnskoven" />
   </div>
 </MainLayout>

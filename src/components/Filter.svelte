@@ -27,16 +27,16 @@
   };
 </script>
 
-<div class="py-5">
+<div class="">
   <!-- Navigationsmenu -->
-  <nav class="mb-7 flex flex-col md:flex-row gap-2 md:gap-10 text-rod text-base md:text-base font-elza font-medium justify-center">
-    <button class="hover:underline hover:scale-105 focus:underline" x-text="translations[lang].illustration" on:click={() => filterByCategory("illustrationer")}> Illustrationer</button>
-    <button class="hover:underline hover:scale-105 focus:underline" x-text="translations[lang].teaching" on:click={() => filterByCategory("undervisning")}>Undervisning</button>
-    <button class="hover:underline hover:scale-105 focus:underline" x-text="translations[lang].fieldTrips" on:click={() => filterByCategory("feltture")}>Botaniske feltture</button>
+  <nav class="mb-7 mt-3 flex flex-col md:flex-row gap-2 md:gap-10 text-rod text-base md:text-base font-elza font-medium justify-center md:mt-12">
+    <button class="hover:underline underline md:no-underline hover:scale-105 focus:underline" x-text="translations[lang].illustration" on:click={() => filterByCategory("illustrationer")}> Illustrationer</button>
+    <button class="hover:underline underline md:no-underline hover:scale-105 focus:underline" x-text="translations[lang].teaching" on:click={() => filterByCategory("undervisning")}>Undervisning</button>
+    <button class="hover:underline underline md:no-underline hover:scale-105 focus:underline" x-text="translations[lang].fieldTrips" on:click={() => filterByCategory("feltture")}>Botaniske feltture</button>
   </nav>
 
   <!-- Indhold -->
-  <div class="flex flex-wrap gap-5 justify-center md:mx-20 mb-20">
+  <div class="flex flex-wrap gap-5 justify-center md:mx-20 mb-32">
     {#each filteredData as item (item.id)}
       <div class="relative group flex flex-col justify-center items-center w-80 h-80 bg-white">
         <!-- Billedet -->
